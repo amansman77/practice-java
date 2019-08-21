@@ -11,6 +11,9 @@ public class Main {
 		ss.addAll(args);
 		ss.retainAll(args);
 		ss.removeAll(args);
-		
+	
+		ListSample ls = new ListSample();
+		ls.getNameList();
+		ls.shuffle(args);
     }
 }

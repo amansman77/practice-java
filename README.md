@@ -9,3 +9,4 @@
 		- Unique value 추출
 		- Value 중 1개만 있는 것과 중복을 가지는 값 분류
 		- containsAll, addAll, retainAll, removeAll 활용 샘플
+	2. List
