@@ -1,12 +1,17 @@
 package com.ho.practice.java.collection;
 
+import java.util.Date;
+
 public class Employee {
 
 	private Department department;
 	private Integer salary;
 	private Integer grade;
 	private String gender;
+	private Date hireDate;
 	
+	public Employee() {
+	}
 	public Employee(Department department) {
 		this.department = department;
 	}
@@ -22,6 +27,10 @@ public class Employee {
 		this.department = department;
 		this.salary = salary;
 		this.grade = grade;
+	}
+	
+	public Employee(Date hireDate) {
+		this.hireDate = hireDate;
 	}
 	public Department getDepartment() {
 		return department;
@@ -46,6 +55,16 @@ public class Employee {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	public Date getHireDate() {
+		return hireDate;
+	}
+	public void setHireDate(Date hireDate) {
+		this.hireDate = hireDate;
+	}
+	
+	public String toString() {
+		return "HireDate : " + hireDate;
 	}
 
 }
