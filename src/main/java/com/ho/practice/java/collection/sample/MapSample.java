@@ -1,4 +1,4 @@
-package com.ho.practice.java.collection;
+package com.ho.practice.java.collection.sample;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,6 +15,9 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import com.ho.practice.java.collection.Department;
+import com.ho.practice.java.collection.Employee;
 
 /**
  * Map을 활용해보는 클래스

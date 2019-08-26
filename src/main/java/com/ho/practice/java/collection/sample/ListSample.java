@@ -1,4 +1,4 @@
-package com.ho.practice.java.collection;
+package com.ho.practice.java.collection.sample;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,11 +7,21 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import com.ho.practice.java.collection.Person;
+
 /**
  * List를 활용해보는 클래스
  *
  */
 public class ListSample {
+	public static void main(String[] args) {
+		args = new String[]{"123", "234", "345", "123"};
+		
+		ListSample ls = new ListSample();
+		ls.getNameList();
+		ls.shuffle(args);
+    }
+	
 	/**
 	 * List의 Object에서 특정값을 축출하여 List생성 
 	 * @param args
