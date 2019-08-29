@@ -20,7 +20,7 @@ import com.ho.practice.java.collection.Department;
 import com.ho.practice.java.collection.Employee;
 
 /**
- * MapÀ» È°¿ëÇØº¸´Â Å¬·¡½º
+ * Mapì„ í™œìš©í•´ë³´ëŠ” í´ë˜ìŠ¤
  *
  */
 public class MapSample {
@@ -42,7 +42,7 @@ public class MapSample {
     }
 	
 	/**
-	 * ºÎ¼­º°·Î Á÷¿ø ºĞ·ù
+	 * ë¶€ì„œë³„ë¡œ ì§ì› ë¶„ë¥˜
 	 */
 	public void byDeptEmployee() {
 		List<Department> departments = 
@@ -60,7 +60,7 @@ public class MapSample {
 		Map<Department, List<Employee>> byDept = employees.stream()
 		.collect(Collectors.groupingBy(Employee::getDepartment));
 		
-		String result = "ºÎ¼­º° Á÷¿ø ¼ö :";
+		String result = "ë¶€ì„œë³„ ì§ì› ìˆ˜ :";
 		for (Entry<Department, List<Employee>> map : byDept.entrySet()) {
 			result += " " + map.getKey().getDeptName() + " (" + map.getValue().size() + ")";
 		}
@@ -68,7 +68,7 @@ public class MapSample {
 	}
 	
 	/**
-	 * ºÎ¼­º°, Á÷±ºº° Á÷¿ø ºĞ·ù
+	 * ë¶€ì„œë³„, ì§êµ°ë³„ ì§ì› ë¶„ë¥˜
 	 */
 	public void byDeptAndGender() {
 		List<Department> departments = 
@@ -86,18 +86,18 @@ public class MapSample {
 		Map<Department, Map<String, List<Employee>>> byDeptAndGender = employees.stream()
 		.collect(Collectors.groupingBy(Employee::getDepartment, Collectors.groupingBy(Employee::getGender)));
 		
-		String result = "ºÎ¼­º°,¼ºº° Á÷¿ø ¼ö :";
+		String result = "ë¶€ì„œë³„,ì„±ë³„ ì§ì› ìˆ˜ :";
 		for (Entry<Department, Map<String, List<Employee>>> deptMap : byDeptAndGender.entrySet()) {
 			result += " " + deptMap.getKey().getDeptName();
 			for (Entry<String, List<Employee>> genderMap : deptMap.getValue().entrySet()) {
-				result += " " + (genderMap.getKey().equals("m")?"³²¼º":"¿©¼º") + "(" + genderMap.getValue().size() + ")";
+				result += " " + (genderMap.getKey().equals("m")?"ë‚¨ì„±":"ì—¬ì„±") + "(" + genderMap.getValue().size() + ")";
 			}
 		}
 		System.out.println(result);
 	}
 	
 	/**
-	 * ºÎ¼­º° ±Ş¿©ÀÇ ÇÕ
+	 * ë¶€ì„œë³„ ê¸‰ì—¬ì˜ í•©
 	 */
 	public void byDeptSalary() {
 		List<Department> departments = 
@@ -116,7 +116,7 @@ public class MapSample {
 		.collect(Collectors.groupingBy(Employee::getDepartment,
 		Collectors.summingInt(Employee::getSalary)));
 		
-		String result = "ºÎ¼­º° ±Ş¿©ÀÇ ÇÕ :";
+		String result = "ë¶€ì„œë³„ ê¸‰ì—¬ì˜ í•© :";
 		for (Entry<Department, Integer> map : totalByDept.entrySet()) {
 			result += " " + map.getKey().getDeptName() + " (" + map.getValue() + ")";
 		}
@@ -124,7 +124,7 @@ public class MapSample {
 	}
 	
 	/**
-	 * ÇÕ°İºÒÇÕ°İ ±¸ºĞ
+	 * í•©ê²©ë¶ˆí•©ê²© êµ¬ë¶„
 	 */
 	public void byGradePartition() {
 		Integer PASS_THRESHOLD = 3;
@@ -144,15 +144,15 @@ public class MapSample {
 		Map<Boolean, List<Employee>> passingFailing = employees.stream()
 		.collect(Collectors.partitioningBy(s -> s.getGrade()>= PASS_THRESHOLD )); 
 		
-		String result = "3À» ±âÁØÀ¸·Î ³ª´® :";
+		String result = "3ì„ ê¸°ì¤€ìœ¼ë¡œ ë‚˜ëˆ” :";
 		for (Entry<Boolean, List<Employee>> map : passingFailing.entrySet()) {
-			result += " " + (map.getKey()?"ÇÕ°İÀÚ ¼ö : ":"ºÒÇÕ°İÀÚ ¼ö") + " (" + map.getValue().size() + ")";
+			result += " " + (map.getKey()?"í•©ê²©ì ìˆ˜ : ":"ë¶ˆí•©ê²©ì ìˆ˜") + " (" + map.getValue().size() + ")";
 		}
 		System.out.println(result);
 	}
 	
 	/**
-	 * MapÀÇ ImplementaitonµéÀ» ºñ±³
+	 * Mapì˜ Implementaitonë“¤ì„ ë¹„êµ
 	 */
 	public void compareEachMapImple() {
 		String s = "if it is to be it is up to me to delegate";
@@ -177,7 +177,7 @@ public class MapSample {
 	}
 	
 	/**
-	 * À¯È¿¼º È®ÀÎ ÀÀ¿ë
+	 * ìœ íš¨ì„± í™•ì¸ ì‘ìš©
 	 */
 	public void validate() {
 		Map<String, String> attrMap = Stream.of(new String[][] {
@@ -208,7 +208,7 @@ public class MapSample {
 	}
 	
 	/**
-	 * ¾Ö³Ê±×·¥ ¿¹Á¦
+	 * ì• ë„ˆê·¸ë¨ ì˜ˆì œ
 	 */
 	public void anagrams() {
 		int minGroupSize = Integer.parseInt("8");

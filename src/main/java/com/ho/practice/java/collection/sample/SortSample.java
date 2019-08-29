@@ -13,7 +13,7 @@ import com.ho.practice.java.collection.Employee;
 import com.ho.practice.java.collection.Name;
 
 /**
- * Á¤·Ä¿¡ ´ëÇÑ ¿¹Á¦
+ * ì •ë ¬ì— ëŒ€í•œ ì˜ˆì œ
  *
  */
 public class SortSample {
@@ -24,7 +24,7 @@ public class SortSample {
     }
 	
 	/**
-	 * °´Ã¼ÀÇ compareTo¸¦ overrideÇÏ¿© Á¤·Ä ±¸Çö
+	 * ê°ì²´ì˜ compareToë¥¼ overrideí•˜ì—¬ ì •ë ¬ êµ¬í˜„
 	 */
 	public void nameSort() {
 		Name nameArray[] = {
@@ -46,7 +46,7 @@ public class SortSample {
 		}
 	};
     /**
-     * Comparator¸¦ ±¸ÇöÇÏ¿© Á¤·Ä ±¸Çö
+     * Comparatorë¥¼ êµ¬í˜„í•˜ì—¬ ì •ë ¬ êµ¬í˜„
      * @throws ParseException 
      */
 	public void empSort() {

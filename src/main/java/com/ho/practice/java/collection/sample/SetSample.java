@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * SetÀ» È°¿ëÇØº¸´Â Å¬·¡½º
+ * Setì„ í™œìš©í•´ë³´ëŠ” í´ë˜ìŠ¤
  *
  */
 public class SetSample {
@@ -23,7 +23,7 @@ public class SetSample {
     }
 	
 	/**
-	 * input value Áß À¯ÀÏÇÑ °ªÀ» Ãâ·ÂÇÏ´Â ÇÔ¼ö
+	 * input value ì¤‘ ìœ ì¼í•œ ê°’ì„ ì¶œë ¥í•˜ëŠ” í•¨ìˆ˜
 	 * @param args
 	 */
 	public void findUniqeValue(String[] args) {
@@ -35,7 +35,7 @@ public class SetSample {
     }
 	
 	/**
-	 * input value Áß 1°³¸¸ ÀÖ´Â °ª°ú ±× ÀÌ»óÀ» °¡Áö´Â °ª ºĞ·ù ÇÏ´Â ÇÔ¼ö
+	 * input value ì¤‘ 1ê°œë§Œ ìˆëŠ” ê°’ê³¼ ê·¸ ì´ìƒì„ ê°€ì§€ëŠ” ê°’ ë¶„ë¥˜ í•˜ëŠ” í•¨ìˆ˜
 	 * @param args
 	 */
 	public void findUniqeValueAndDuplicate(String[] args) {
@@ -54,7 +54,7 @@ public class SetSample {
     }
 	
 	/**
-	 * containsAll »ùÇÃ
+	 * containsAll ìƒ˜í”Œ
 	 * @param args
 	 */
 	public void containsAll(String[] args) {
@@ -69,7 +69,7 @@ public class SetSample {
     }
 	
 	/**
-	 * addAll »ùÇÃ
+	 * addAll ìƒ˜í”Œ
 	 * @param args
 	 */
 	public void addAll(String[] args) {
@@ -85,7 +85,7 @@ public class SetSample {
     }
 	
 	/**
-	 * retainAll »ùÇÃ
+	 * retainAll ìƒ˜í”Œ
 	 * @param args
 	 */
 	public void retainAll(String[] args) {
@@ -101,7 +101,7 @@ public class SetSample {
     }
 	
 	/**
-	 * removeAll »ùÇÃ
+	 * removeAll ìƒ˜í”Œ
 	 * @param args
 	 */
 	public void removeAll(String[] args) {

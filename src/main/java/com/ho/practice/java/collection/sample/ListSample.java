@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import com.ho.practice.java.collection.Person;
 
 /**
- * List¸¦ È°¿ëÇØº¸´Â Å¬·¡½º
+ * Listë¥¼ í™œìš©í•´ë³´ëŠ” í´ë˜ìŠ¤
  *
  */
 public class ListSample {
@@ -19,11 +19,12 @@ public class ListSample {
 		
 		ListSample ls = new ListSample();
 		ls.getNameList();
+		ls.getPerson();
 		ls.shuffle(args);
     }
 	
 	/**
-	 * ListÀÇ Object¿¡¼­ Æ¯Á¤°ªÀ» ÃàÃâÇÏ¿© List»ı¼º 
+	 * Listì˜ Objectì—ì„œ íŠ¹ì •ê°’ì„ ì¶•ì¶œí•˜ì—¬ Listìƒì„± 
 	 * @param args
 	 */
 	public void getNameList() {
@@ -42,7 +43,27 @@ public class ListSample {
     }
 	
 	/**
-	 * List³»ÀÇ °ªµé³¢¸® ÀÓÀÇ·Î º¯°æ
+	 * Listì˜ Objectì—ì„œ íŠ¹ì •ê°’ì„ ê°€ì§„ ê°ì²´ ë°˜í™˜ 
+	 * @param args
+	 */
+	public void getPerson() {
+		List<Person> peopleList = 
+				  Arrays.asList(new Person("potatoes"),
+				                new Person("orange"),
+				                new Person("lemon"),
+				                new Person("bread"),
+				                new Person("sugar"));
+		
+		Person person = peopleList.stream()
+				.filter(p -> "lemon".equals(p.getName()))
+				.findAny()
+				.orElse(null);
+		
+		System.out.println("Peoples : " + person);
+    }
+	
+	/**
+	 * Listë‚´ì˜ ê°’ë“¤ë¼ë¦¬ ì„ì˜ë¡œ ë³€ê²½
 	 * @param args
 	 */
 	public void shuffle(String[] args) {
