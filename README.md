@@ -1,25 +1,25 @@
-# Java °ü·Ã »ùÇÃ ÄÚµå
+# Java ê´€ë ¨ ìƒ˜í”Œ ì½”ë“œ
 
-## °³¹ß ÇÁ·¹ÀÓ¿öÅ©
- - IDE : STS-4.2.2.RELEASE
- - Java : openjdk 12.0.1
- 
-## »ùÇÃ Á¾·ù
-	1. Set
-		- Unique value ÃßÃâ
-		- Value Áß 1°³¸¸ ÀÖ´Â °Í°ú Áßº¹À» °¡Áö´Â °ª ºÐ·ù
-		- containsAll, addAll, retainAll, removeAll È°¿ë »ùÇÃ
-	2. List
-		- °´Ã¼¸¦ °¡Áø ¸®½ºÆ®¿¡¼­ Æ¯Á¤°ª¸¸ ÃßÃâÇÏ¿© ¸®½ºÆ®·Î Àç±¸¼º
-		- ¸®½ºÆ®³»ÀÇ ÀÓÀÇÀÇ °ªÀ» ¼¯À½
-	3. Map
-		- ºÎ¼­º° Á÷¿øºÐ·ù
-		- ºÎ¼­º°, Á÷±ºº° Á÷¿øºÐ·ù
-		- ºÎ¼­º° ±Þ¿© ÃÑÇÕ
-		- ÇÕ°Ý/ºÒÇÕ°Ý ±¸ºÐ
-		- MapÀÇ ImplementaitonµéÀ» ºñ±³
-		- À¯È¿¼º È®ÀÎ ¿¹Á¦
-		- ¾Ö³Ê±×·¥ ¿¹Á¦
-	4. Sort
-		- °´Ã¼ÀÇ compareTo¸¦ overrideÇÏ¿© Á¤·Ä
-		- Comparator¸¦ ±¸ÇöÇÏ¿© Á¤·Ä
+## ê°œë°œ í”„ë ˆìž„ì›Œí¬
+- IDE : STS-4.2.2.RELEASE
+- Java : openjdk 12.0.1
+
+## ìƒ˜í”Œ ì¢…ë¥˜
+1. Set
+	- Unique value ì¶”ì¶œ
+	- Value ì¤‘ 1ê°œë§Œ ìžˆëŠ” ê²ƒê³¼ ì¤‘ë³µì„ ê°€ì§€ëŠ” ê°’ ë¶„ë¥˜
+	- containsAll, addAll, retainAll, removeAll í™œìš© ìƒ˜í”Œ
+2. List
+	- ê°ì²´ë¥¼ ê°€ì§„ ë¦¬ìŠ¤íŠ¸ì—ì„œ íŠ¹ì •ê°’ë§Œ ì¶”ì¶œí•˜ì—¬ ë¦¬ìŠ¤íŠ¸ë¡œ ìž¬êµ¬ì„±
+	- ë¦¬ìŠ¤íŠ¸ë‚´ì˜ ìž„ì˜ì˜ ê°’ì„ ì„žìŒ
+3. Map
+	- ë¶€ì„œë³„ ì§ì›ë¶„ë¥˜
+	- ë¶€ì„œë³„, ì§êµ°ë³„ ì§ì›ë¶„ë¥˜
+	- ë¶€ì„œë³„ ê¸‰ì—¬ ì´í•©
+	- í•©ê²©/ë¶ˆí•©ê²© êµ¬ë¶„
+	- Mapì˜ Implementaitonë“¤ì„ ë¹„êµ
+	- ìœ íš¨ì„± í™•ì¸ ì˜ˆì œ
+	- ì• ë„ˆê·¸ëž¨ ì˜ˆì œ
+4. Sort
+	- ê°ì²´ì˜ compareToë¥¼ overrideí•˜ì—¬ ì •ë ¬
+	- Comparatorë¥¼ êµ¬í˜„í•˜ì—¬ ì •ë ¬
