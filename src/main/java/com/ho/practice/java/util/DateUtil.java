@@ -1,4 +1,4 @@
-package com.ho.practice.java.date;
+package com.ho.practice.java.util;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

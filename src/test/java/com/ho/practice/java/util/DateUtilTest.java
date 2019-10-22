@@ -1,4 +1,4 @@
-package com.ho.practice.java;
+package com.ho.practice.java.util;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 import org.junit.Test;
 
-import com.ho.practice.java.date.DateUtil;
+import com.ho.practice.java.util.DateUtil;
 
 public class DateUtilTest {
 
