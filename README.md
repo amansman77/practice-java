@@ -51,6 +51,34 @@ Implementation : HashSet, TreeSet, LinkedHashSet
     - 입력 순서를 보장
     - HashSet보다 조금 느림
 
+### 집합처리
+
+[Java의 두 Set 교집합 최적화 - The Missing Papers](http://docs.likejazz.com/intersection-of-two-sets/)를 참고했습니다.
+
+집합처리를 하는 방식에는 JDK, Guava, NIH 가 있는데, 성능은 NIH > Guava > JDK 순서로 좋다.
+
+*교집합*
+
+JDK 활용
+```java
+Set<Integer> intersection = new HashSet<Integer>(preSet);
+intersection.retainAll(curSet);
+intersectionSize = intersection.size();
+```
+
+Guava 활용
+```java
+Set<Integer> intersection = Sets.intersection(curSet, preSet);
+intersectionSize = intersection.size();
+```
+
+*차집합*
+
+Guava 활용
+```java
+Set<Integer> difference = Sets.difference(oldIdSet, newIdSet)
+```
+
 ## SortedSet
 순서를 가지는 Set
 
