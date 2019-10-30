@@ -27,6 +27,7 @@ public class MapSample {
 	
 	public static void main(String[] args) {
 		MapSample ms = new MapSample();
+		ms.initMap();
 		ms.byDeptEmployee();
 		ms.byDeptAndGender();
 		ms.byDeptSalary();
@@ -40,6 +41,14 @@ public class MapSample {
 		 */
 //		Set<String> testSet = Collections.singleton("test");
     }
+	
+	public void initMap() {
+		Map<String, Employee> map = Stream.of(new Object[][] {
+		    { "employee1", new Employee(new Department("부서1")) }
+		}).collect(Collectors.toMap(data -> (String) data[0], data -> (Employee) data[1]));
+		
+		System.out.println("Key : employee1 , Value : " + map.get("employee1").getDepartment().getDeptName());
+	}
 	
 	/**
 	 * 부서별로 직원 분류

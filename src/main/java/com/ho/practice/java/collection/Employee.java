@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Employee {
 
+	private String employeeId;
 	private Department department;
 	private Integer salary;
 	private Integer grade;
@@ -28,9 +29,15 @@ public class Employee {
 		this.salary = salary;
 		this.grade = grade;
 	}
-	
 	public Employee(Date hireDate) {
 		this.hireDate = hireDate;
+	}
+	
+	public String getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
 	}
 	public Department getDepartment() {
 		return department;
