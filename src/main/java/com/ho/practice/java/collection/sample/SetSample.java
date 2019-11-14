@@ -13,6 +13,9 @@ public class SetSample {
 	public static void main(String[] args) {
 		args = new String[]{"123", "234", "345", "123"};
 		
+		// 생성자
+//		Set<Integer> example1 = new HashSet<>(Arrays.asList(1, 2, 3));
+		
 		SetSample ss = new SetSample();
 		ss.findUniqeValue(args);
 		ss.findUniqeValueAndDuplicate(args);
