@@ -1,6 +1,5 @@
 package com.ho.practice.java.collection.sample;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -91,9 +90,11 @@ public class ListSample {
 	 * @param args
 	 */
 	public void shuffle(String[] args) {
-		List<String> list = new ArrayList<String>();
-        for (String a : args)
-            list.add(a);
+//		List<String> list = new ArrayList<String>();
+//        for (String a : args)
+//            list.add(a);
+        List<String> list = Arrays.asList(args);
+        
         Collections.shuffle(list, new Random());
         System.out.println("Shuffle list : " + list);
         
