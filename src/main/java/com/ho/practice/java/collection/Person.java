@@ -3,9 +3,13 @@ package com.ho.practice.java.collection;
 public class Person {
 
 	private String name;
+	private String gender;
+	private Integer age;
 	
-	public Person(String name) {
+	public Person(String name, String gender, int age) {
 		this.setName(name);
+		this.gender = gender;
+		this.age = age;
 	}
 
 	public String getName() {
@@ -14,9 +18,21 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public Integer getAge() {
+		return age;
+	}
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
 	public String toString() {
-		return "name : " + name;
+		return "name : " + name + ", gender : " + gender + "\n";
 	}
 
 }
