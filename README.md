@@ -51,6 +51,13 @@ Implementation : HashSet, TreeSet, LinkedHashSet
     - 입력 순서를 보장
     - HashSet보다 조금 느림
 
+### Bulk Operations
+
+- s1.containsAll(s2) — s2가 s1의 subset이면 true반환. (s1이 s2의 모든 element를 포함하면 s2는 s1의 subset이다.)
+- s1.addAll(s2) — s1에 s2를 union한다.
+- s1.retainAll(s2) — s1에 s2를 intersection한다.
+- s1.removeAll(s2) — s1에서 s2의 element를 제거한다.
+
 ### 집합처리
 
 [Java의 두 Set 교집합 최적화 - The Missing Papers](http://docs.likejazz.com/intersection-of-two-sets/)를 참고했습니다.
@@ -89,6 +96,12 @@ TreeSet과 동일한 기능??
 
 ## List (Sequence)
 순서를 보장하는 collection
+
+다음 기능을 활용할 수 있음
+- Positional access
+- Search 
+- Iteration
+- Range view
 
 Implementation : ArrayList, LinkedList
 - ArrayList : 성능이 가장 좋음
