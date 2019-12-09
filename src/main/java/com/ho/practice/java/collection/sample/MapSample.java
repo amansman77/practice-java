@@ -13,6 +13,7 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -28,6 +29,7 @@ public class MapSample {
 	public static void main(String[] args) {
 		MapSample ms = new MapSample();
 		ms.initMap();
+		ms.toMap();
 		ms.byDeptEmployee();
 		ms.byDeptAndGender();
 		ms.byDeptSalary();
@@ -51,23 +53,43 @@ public class MapSample {
 	}
 	
 	/**
+	 * List를 Map으로 전환
+	 */
+	public void toMap() {
+		List<Employee> employees = 
+				  List.of(new Employee("1", "홍길동"),
+						  new Employee("2", "김개똥"),
+						  new Employee("3", "박말자"));
+		
+		Map<String, Employee> employeeMapKEmployeeId = employees
+				.stream()
+				.collect(Collectors.toMap(Employee::getEmployeeId, Function.identity()));
+		
+		String result = "직원 ID로 Map생성 :";
+		for (Entry<String, Employee> map : employeeMapKEmployeeId.entrySet()) {
+			result += " " + map.getKey() + " (" + map.getValue().getName() + ")";
+		}
+		System.out.println(result);
+	}
+	
+	/**
 	 * 부서별로 직원 분류
 	 */
 	public void byDeptEmployee() {
 		List<Department> departments = 
-				  Arrays.asList(new Department("potatoes"),
-				                new Department("orange"),
-				                new Department("sugar"));
+				Arrays.asList(new Department("potatoes"),
+						new Department("orange"),
+						new Department("sugar"));
 		List<Employee> employees = 
-				  Arrays.asList(new Employee(departments.get(0)),
-				                new Employee(departments.get(1)),
-				                new Employee(departments.get(2)),
-				                new Employee(departments.get(0)),
-				                new Employee(departments.get(0)));
+				Arrays.asList(new Employee(departments.get(0)),
+						new Employee(departments.get(1)),
+						new Employee(departments.get(2)),
+						new Employee(departments.get(0)),
+						new Employee(departments.get(0)));
 		
 		// Group employees by department
 		Map<Department, List<Employee>> byDept = employees.stream()
-		.collect(Collectors.groupingBy(Employee::getDepartment));
+				.collect(Collectors.groupingBy(Employee::getDepartment));
 		
 		String result = "부서별 직원 수 :";
 		for (Entry<Department, List<Employee>> map : byDept.entrySet()) {

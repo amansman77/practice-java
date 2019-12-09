@@ -5,6 +5,7 @@ import java.util.Date;
 public class Employee {
 
 	private String employeeId;
+	private String name;
 	private Department department;
 	private Integer salary;
 	private Integer grade;
@@ -12,6 +13,10 @@ public class Employee {
 	private Date hireDate;
 	
 	public Employee() {
+	}
+	public Employee(String employeeId, String name) {
+		this.employeeId = employeeId;
+		this.name = name;
 	}
 	public Employee(Department department) {
 		this.department = department;
@@ -69,9 +74,14 @@ public class Employee {
 	public void setHireDate(Date hireDate) {
 		this.hireDate = hireDate;
 	}
-	
 	public String toString() {
 		return "HireDate : " + hireDate;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
