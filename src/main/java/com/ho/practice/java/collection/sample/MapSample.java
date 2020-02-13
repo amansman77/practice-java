@@ -56,7 +56,7 @@ public class MapSample {
 	 * List를 Map으로 전환
 	 */
 	public void toMap() {
-		List<Employee> employees = 
+		List<Employee> employees =
 				  List.of(new Employee("1", "홍길동"),
 						  new Employee("2", "김개똥"),
 						  new Employee("3", "박말자"));

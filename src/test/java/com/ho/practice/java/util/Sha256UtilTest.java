@@ -1,6 +1,8 @@
 package com.ho.practice.java.util;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -17,8 +19,8 @@ public class Sha256UtilTest {
 		String newPw = Sha256Util.encode(pw);
 	    
 		//then
-		assertThat(newPw).isNotNull();
-		assertThat(newPw).isNotEqualTo(pw);
+		assertNotNull(newPw);
+		assertNotEquals(pw, newPw);
 	}
 
 	@Test
@@ -31,8 +33,8 @@ public class Sha256UtilTest {
 		String newPw2 = Sha256Util.encode(pw);
 	    
 		//then
-		assertThat(newPw).isNotNull();
-		assertThat(newPw).isEqualTo(newPw2);
+		assertNotNull(newPw);
+		assertTrue(newPw2.equals(newPw));
 	}
 	
 }

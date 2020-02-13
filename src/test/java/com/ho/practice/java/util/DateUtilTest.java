@@ -1,13 +1,11 @@
 package com.ho.practice.java.util;
 
-
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.time.LocalDateTime;
 
 import org.junit.Test;
-
-import com.ho.practice.java.util.DateUtil;
 
 public class DateUtilTest {
 
@@ -19,9 +17,8 @@ public class DateUtilTest {
 		String date = DateUtil.getNow(DateUtil.PATTERN_DATE_TIME_YYYYMMDDHHMMSS);
 		
 		//then
-		assertThat(date).isNotNull();
-		assertThat(date.length()).isEqualTo(14);
-		
+		assertNotNull(date);
+		assertEquals(14, date.length());
 	}
 
 	@Test
@@ -33,10 +30,9 @@ public class DateUtilTest {
 		String date = DateUtil.toString(time, DateUtil.PATTERN_DATE_TIME_YYYYMMDDHHMMSS);
 		
 		//then
-		assertThat(date).isNotNull();
-		assertThat(date.length()).isEqualTo(14);
-		assertThat(date).isEqualTo("20191022095001");
-		
+		assertNotNull(date);
+		assertEquals(14, date.length());
+		assertEquals("20191022095001", date);
 	}
 	
 	@Test
@@ -47,14 +43,13 @@ public class DateUtilTest {
 		LocalDateTime time = DateUtil.getLocalDateTime("20191022095001", DateUtil.PATTERN_DATE_TIME_YYYYMMDDHHMMSS);
 		
 		//then
-		assertThat(time).isNotNull();
-		assertThat(time.getYear()).isEqualTo(2019);
-		assertThat(time.getMonthValue()).isEqualTo(10);
-		assertThat(time.getDayOfMonth()).isEqualTo(22);
-		assertThat(time.getHour()).isEqualTo(9);
-		assertThat(time.getMinute()).isEqualTo(50);
-		assertThat(time.getSecond()).isEqualTo(1);
-		
+		assertNotNull(time);
+		assertEquals(2019, time.getYear());
+		assertEquals(10, time.getMonthValue());
+		assertEquals(22, time.getDayOfMonth());
+		assertEquals(9, time.getHour());
+		assertEquals(50, time.getMinute());
+		assertEquals(1, time.getSecond());
 	}
 	
 }
