@@ -217,12 +217,18 @@ Caused by: java.lang.ClassNotFoundException: org.junit.runner.manipulation.Filte
 	... 8 more
 ```
 
+#### 실제 라이브러리가 없는지에 대한 확인
+
 다음 과정으로 JUnit 4 라이브러리를 추가한 상태임
 `Java Build Path -> Libraries -> Add Library -> JUnit 4`
 
 이는 STS에서 제공하는 JUnit 플러그인을 사용하겠다는 의미이고 `JUnit-4.12`와 `hamcrest.core-1.3.0`을 지원하고 있음
 
 `JUnit.jar`에 `org.junit.runner.manipulation.Filter`클래스 존재
+
+**클래스가 존재하는것을 확인했습니다.**
+
+#### 테스트하는 과정에서 라이브러리가 누락되는지 확인
 
 JUnit을 실행하기 위한 명령어를 확인하니 다음과 같다.
 ```bash
