@@ -194,7 +194,13 @@ Key가 순서를 가지는 Map
 
 ## JUnit
 
-소스 보존상 추가해놓은 상태로 테스트 케이스가 돌아가는 환경은 아님
+도입
+
+## File Watch
+
+`java.nio.file.WatchService`를 활용하여 파일의 변경사항을 감지하는 예제 추가
+
+`com.ho.practice.java.file`에 구현
 
 ## Troubleshooting
 
