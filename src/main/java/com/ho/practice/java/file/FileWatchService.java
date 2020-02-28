@@ -16,8 +16,10 @@ import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Consumer;
@@ -93,7 +95,9 @@ public class FileWatchService {
 		}
 	}
 
-	public void take() {
+	public List<String> take() {
+		List<String> filePaths = new ArrayList<>();
+		
 		try {
 			WatchKey watchKey = watchService.take();
 			Path path = keys.get(watchKey);
@@ -110,11 +114,15 @@ public class FileWatchService {
 				} else if (kind.equals(ENTRY_DELETE)) {
 					unRegist(eventFilePath);
 				}
+            	
+            	filePaths.add(eventFilePath);
             }
             watchKey.reset();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		return filePaths;
 	}
 	
 }

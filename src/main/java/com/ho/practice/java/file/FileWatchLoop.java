@@ -1,20 +1,31 @@
 package com.ho.practice.java.file;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FileWatchLoop {
 	
-	boolean isRunning = true;
+	private List<FileWatchEvent> events = new ArrayList<>();
+	private boolean isRunning = true;
 
 	public void startWatch(String filePath) {
 		FileWatchService fileWatchService = new FileWatchService(filePath);
 		fileWatchService.registRecursive();
 		
 		while (isRunning) {
-			fileWatchService.take();
+			List<String> filePaths = fileWatchService.take();
+			for (FileWatchEvent event: events) {
+				event.run(filePaths);
+			}
 		}
     }
 	
 	public void stopWatch() {
 		isRunning = false;
+	}
+
+	public void addWatchEvent(FileWatchEvent fileWatchEvent) {
+		events.add(fileWatchEvent);
 	}
 	
 }
