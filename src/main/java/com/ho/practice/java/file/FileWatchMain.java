@@ -10,7 +10,7 @@ public class FileWatchMain {
 		FileWatchLoop fileWatchLoop = new FileWatchLoop();
 		
 		FileWatchEvent fileWatchEvent = (filePaths) -> {
-			System.out.println("Event : " + filePaths);
+			System.out.println("Callback event : " + filePaths);
 		};
 		fileWatchLoop.addWatchEvent(fileWatchEvent);
 		

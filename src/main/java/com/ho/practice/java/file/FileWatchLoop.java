@@ -13,6 +13,7 @@ public class FileWatchLoop {
 		fileWatchService.registRecursive();
 		
 		while (isRunning) {
+			System.out.println("Taking!!");
 			List<String> filePaths = fileWatchService.take();
 			for (FileWatchEvent event: events) {
 				event.run(filePaths);

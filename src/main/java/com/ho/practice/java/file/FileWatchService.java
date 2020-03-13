@@ -16,13 +16,15 @@ import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 import com.sun.nio.file.SensitivityWatchEventModifier;
 
@@ -96,33 +98,59 @@ public class FileWatchService {
 	}
 
 	public List<String> take() {
-		List<String> filePaths = new ArrayList<>();
+		Set<String> filePaths = new HashSet<String>();
 		
 		try {
 			WatchKey watchKey = watchService.take();
 			Path path = keys.get(watchKey);
+			
+			/*
+			 * 파일이 생성되면 두번 호출된다.
+			 * 파일을 만들때와 갱신일을 수정할때.
+			 * 이를 Event를 poll하기전에 잠시 딜레이를 줌으로써 동시에 받아서 처리하도록 한다.
+			 */
+			Thread.sleep( 50 );
+			
             for (WatchEvent<?> event : watchKey.pollEvents()) {
             	WatchEvent.Kind<?> kind = event.kind();
             	Path name = (Path) event.context();
             	String eventFilePath = path + File.separator + name;
             	
             	System.out.println(kind + ", count : " + event.count());
-            	System.out.println("key path : " + eventFilePath);
+            	System.out.println("Event file path : " + eventFilePath);
             	
-            	if (kind.equals(ENTRY_CREATE)) {
-            		regist(Paths.get(eventFilePath));
-				} else if (kind.equals(ENTRY_DELETE)) {
-					unRegist(eventFilePath);
+            	this.handleEvent(kind, eventFilePath);
+
+            	if (this.isReturnable(kind, eventFilePath)) {
+            		filePaths.add(eventFilePath);
 				}
-            	
-            	filePaths.add(eventFilePath);
             }
             watchKey.reset();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
-		return filePaths;
+		return filePaths.stream().collect(Collectors.toList());
+	}
+
+	private boolean isReturnable(WatchEvent.Kind<?> eventKind, String filePath) {
+		if (eventKind.equals(ENTRY_CREATE)) {
+    		return true;
+		} else if (eventKind.equals(ENTRY_MODIFY) &&
+    			new File(filePath).isFile()) {
+    		return true;
+		}
+		
+		return false;
+	}
+
+	private void handleEvent(WatchEvent.Kind<?> eventKind, String filePath) {
+		if (eventKind.equals(ENTRY_CREATE) &&
+    			new File(filePath).isDirectory()) {
+    		regist(Paths.get(filePath));
+		} else if (eventKind.equals(ENTRY_DELETE)) {
+			unRegist(filePath);
+		}
 	}
 	
 }

@@ -3,6 +3,7 @@ package com.ho.practice.java.collection.sample;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -107,5 +108,9 @@ public class ListSample {
         Collections.shuffle(staticList);
         System.out.println("Shuffle static list : " + staticList);
     }
+	
+	public List<String> mapToList(Map<String, String> map) {
+		return map.values().stream().collect(Collectors.toList());
+	}
 	
 }
