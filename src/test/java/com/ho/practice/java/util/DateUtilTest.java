@@ -52,4 +52,14 @@ public class DateUtilTest {
 		assertEquals(1, time.getSecond());
 	}
 	
+	@Test
+	public void test() {
+//		String s = "ab";
+//		s.length();
+//		String subS = s.substring(0, 1);
+//		System.out.println(subS);
+//		
+//		subS.equals("");
+	}
+	
 }
