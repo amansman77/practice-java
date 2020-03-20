@@ -11,6 +11,7 @@ public class StringTest {
 		String target = "svn.repository.default.uri";
 		
 		assertEquals(0, target.indexOf("svn.repository"));
+		assertEquals(0, target.lastIndexOf("svn.repository"));
 		
 		target = "test.svn.repository.default.uri";
 		
