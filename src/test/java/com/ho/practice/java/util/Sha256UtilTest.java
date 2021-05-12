@@ -7,7 +7,10 @@ import static org.junit.Assert.assertTrue;
 import java.security.NoSuchAlgorithmException;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
 
+@RunWith(BlockJUnit4ClassRunner.class)
 public class Sha256UtilTest {
 
 	@Test

@@ -3,9 +3,10 @@ package com.ho.practice.java.util;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
 
-import com.ho.practice.java.util.FileUtil;
-
+@RunWith(BlockJUnit4ClassRunner.class)
 public class FileUtilTest {
 
 	@Test
